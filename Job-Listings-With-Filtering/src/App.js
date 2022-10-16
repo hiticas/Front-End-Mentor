@@ -7,7 +7,12 @@ export const App = () => {
         <>
             <div className="app">
                 {data.map((el, key) => {
-                    return <h1 key={key}>{el.company}</h1>;
+                    return (
+                        <div key={key}>
+                            <h1>{el.company}</h1>
+                            <h2>{el.position}</h2>
+                        </div>
+                    );
                 })}
             </div>
         </>
