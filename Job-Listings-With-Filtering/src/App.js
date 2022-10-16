@@ -15,10 +15,7 @@ export const App = () => {
                 <p>Jobs fetching...</p>
             ) : (
                 jobs.map((job, key) => (
-                    <JobBoardComponent
-                        job={job}
-                        key={job.id}
-                    />
+                    <JobBoardComponent job={job} key={key} />
                 ))
             )}
         </div>
