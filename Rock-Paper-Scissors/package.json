@@ -1,0 +1,12 @@
+{
+    "name": "rock-paper-scissors",
+    "version": "1.0.0",
+    "description": "![Rock-Paper-Scissors](https://github.com/hiticas/frontendmentor.io-challenges/blob/main/Rock-Paper-Scissors/game.jpg)",
+    "main": "script.js",
+    "scripts": {
+        "build": "yarn script.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
