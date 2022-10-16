@@ -1,9 +1,17 @@
 import React from "react";
-
 import "./App.scss";
+import data from "./data/data.json";
 
-const App = () => {
-    return <h1 className="app">Job Listings with Filtering</h1>;
+export const App = () => {
+    return (
+        <>
+            <div className="app">
+                {data.map((el, key) => {
+                    return <h1 key={key}>{el.company}</h1>;
+                })}
+            </div>
+        </>
+    );
 };
 
 export default App;
