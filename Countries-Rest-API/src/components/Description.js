@@ -5,9 +5,14 @@ const Description = ({ country, onClose }) => {
         console.log(country);
     }
     return (
-        <div>
+        <div className="w-80 h-screen">
             <h4 onClick={() => log(country)}>Description</h4>
             <h4>{country.name.common}</h4>
+            <img
+                className="h-48"
+                src={country.flags.svg}
+                alt={country.name.common}
+            />
             <button onClick={onClose}>Back</button>
         </div>
     );

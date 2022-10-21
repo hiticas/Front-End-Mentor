@@ -555,9 +555,52 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-teal-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 253 250 / var(--tw-bg-opacity));
+.flex {
+  display: flex;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-48 {
+  height: 12rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.bg-\[var\(--container-color\)\] {
+  background-color: var(--container-color);
+}
+
+.bg-\[var\(--header-color\)\] {
+  background-color: var(--header-color);
 }
 
 .text-3xl {
@@ -571,4 +614,22 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.invert {
+  --tw-invert: invert(100%);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+:root {
+  --header-color: #2b3743;
+  --container-color: #222e37;
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
