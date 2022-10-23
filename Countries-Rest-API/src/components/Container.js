@@ -10,7 +10,7 @@ const Container = () => {
     const [toggleView, setToggleView] = useState(true);
 
     const [inputValue, setInputValue] = useState("");
-    const [dropdownValue, setDropdownValue] = useState("selected");
+    const [dropdownValue, setDropdownValue] = useState("all");
 
     const getApiData = async () => {
         const response = await fetch("https://restcountries.com/v3.1/all");
@@ -34,7 +34,7 @@ const Container = () => {
     const handleSearch = (value) => {
         setInputValue(value);
         seachedCountries = [];
-        if (dropdownValue === "selected") {
+        if (dropdownValue === "all") {
             for (let i = 0; i < countries.length; i++) {
                 if (countries[i].name.common.includes(value)) {
                     seachedCountries.push(countries[i]);
@@ -57,7 +57,7 @@ const Container = () => {
         setDropdownValue(value);
         seachedCountries = [];
         for (let i = 0; i < countries.length; i++) {
-            if (value !== "selected") {
+            if (value !== "all") {
                 if (countries[i].name.common.includes(inputValue)) {
                     if (countries[i].continents[0].includes(value)) {
                         seachedCountries.push(countries[i]);
@@ -73,27 +73,36 @@ const Container = () => {
         setSeachedCountries(seachedCountries);
     };
 
+    const handleBack = () => {
+        setToggleView(!toggleView);
+        setInputValue("");
+        setDropdownValue("all");
+        // setCountries(countries);
+    };
+
     return (
-        <div className="w-full lg:px-20 bg-[var(--container-color)] relativ">
+        <div className="w-full lg:px-20 bg-[var(--container-color)]">
             <h2>Searched country: {inputValue}</h2>
             <h2>Searched region: {dropdownValue}</h2>
-            <Filters
-                handleSearch={handleSearch}
-                handleDropdown={handleDropdown}
-            />
-            <CountriesBox
-                countries={
-                    inputValue === "" && dropdownValue === "selected"
-                        ? countries
-                        : seachedCountries
-                }
-                openCountryDescription={openCountryDescription}
-            />
-            {!toggleView && (
-                <Description
-                    country={country}
-                    onClose={() => setToggleView(!toggleView)}
+
+            {toggleView && (
+                <Filters
+                    handleSearch={handleSearch}
+                    handleDropdown={handleDropdown}
                 />
+            )}
+            {toggleView && (
+                <CountriesBox
+                    countries={
+                        inputValue === "" && dropdownValue === "all"
+                            ? countries
+                            : seachedCountries
+                    }
+                    openCountryDescription={openCountryDescription}
+                />
+            )}
+            {!toggleView && (
+                <Description country={country} onClose={() => handleBack()} />
             )}
         </div>
     );

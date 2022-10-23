@@ -21,15 +21,15 @@ const Filters = ({ handleSearch, handleDropdown }) => {
             </div>
             <div className="dropdown">
                 <select
-                    defaultValue={"selected"}
+                    defaultValue={"all"}
                     name="regions"
                     id="regions"
                     onChange={(event) => handleDropdown(event.target.value)}
                 >
-                    <option value="selected" disabled hidden>
+                    <option value="all" disabled hidden>
                         Filter by Region
                     </option>
-                    <option value="selected">All</option>
+                    <option value="all">All</option>
                     <option value="Africa">Africa</option>
                     <option value="North America">America</option>
                     <option value="Asia">Asia</option>
