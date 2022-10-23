@@ -81,7 +81,7 @@ const Container = () => {
     };
 
     return (
-        <div className="w-full lg:px-20 bg-[var(--container-color)]">
+        <div className="w-full bg-[var(--container-color)] lg:px-20">
             <h2>Searched country: {inputValue}</h2>
             <h2>Searched region: {dropdownValue}</h2>
 

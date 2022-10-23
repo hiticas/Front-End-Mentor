@@ -3,9 +3,8 @@ import CountryBox from "./CountryBox";
 
 const CountriesBox = ({ countries, openCountryDescription }) => {
     return (
-        <div className="content w-full flex flex-col">
-            <h1 className="text-3xl font-bold underline">All Countries: </h1>
-            <div className="flex flex-wrap">
+        <div className="content w-full flex justify-center p-10 lg:p-0 lg:mt-10">
+            <div className="flex flex-col justify-center space-between gap-10 sm:flex-wrap sm:flex-row lg:justify-between">
                 {countries.length === 0 ? (
                     <p>Countries fetching...</p>
                 ) : (
