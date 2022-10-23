@@ -4,10 +4,10 @@ const CountryBox = ({ country, openCountryDescription }) => {
     return (
         <div
             onClick={() => openCountryDescription(country)}
-            className="cursor-pointer w-[280px] bg-[var(--header-color)] shadow-md rounded-lg hover:shadow-xl lg:w-[30%] xl:w-[22%]"
+            className="cursor-pointer mx-auto w-[270px] bg-[var(--header-color)] shadow-md rounded-md hover:shadow-xl hover:translate-y-[-10px] transition duration-50 delay-50 md:w-full lg:w-full"
         >
             <img
-                className="w-full h-44 object-cover rounded-t-lg shadow-lg"
+                className="w-full h-40 object-cover rounded-t-md shadow-lg"
                 src={country.flags.svg}
                 alt={country.name.common}
             />
