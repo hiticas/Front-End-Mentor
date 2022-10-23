@@ -14,6 +14,7 @@ const Filters = ({ handleSearch, handleDropdown }) => {
                 />
                 <input
                     ref={ref}
+                    // defaultValue={ref.current.value == null ? '' ! }
                     placeholder="Search for a country..."
                     onChange={() => handleSearch(ref.current.value)}
                 />

@@ -5,7 +5,7 @@ const Description = ({ country, onClose }) => {
         console.log(country);
     }
     return (
-        <div className="w-80 h-screen">
+        <div className="w-full h-full absolute bg-[var(--container-color)] top-16 left-16">
             <h4 onClick={() => log(country)}>Description</h4>
             <h4>{country.name.common}</h4>
             <img

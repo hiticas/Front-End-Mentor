@@ -57,8 +57,16 @@ const Container = () => {
         setDropdownValue(value);
         seachedCountries = [];
         for (let i = 0; i < countries.length; i++) {
-            if (countries[i].continents[0] === value) {
-                seachedCountries.push(countries[i]);
+            if (value !== "selected") {
+                if (countries[i].name.common.includes(inputValue)) {
+                    if (countries[i].continents[0].includes(value)) {
+                        seachedCountries.push(countries[i]);
+                    }
+                }
+            } else {
+                if (countries[i].name.common.includes(inputValue)) {
+                    seachedCountries.push(countries[i]);
+                }
             }
         }
 
@@ -66,25 +74,21 @@ const Container = () => {
     };
 
     return (
-        <div className="w-full lg:px-20 bg-[var(--container-color)]">
+        <div className="w-full lg:px-20 bg-[var(--container-color)] relativ">
             <h2>Searched country: {inputValue}</h2>
             <h2>Searched region: {dropdownValue}</h2>
-            {toggleView && (
-                <Filters
-                    handleSearch={handleSearch}
-                    handleDropdown={handleDropdown}
-                />
-            )}
-            {toggleView && (
-                <CountriesBox
-                    countries={
-                        inputValue === "" && dropdownValue === "selected"
-                            ? countries
-                            : seachedCountries
-                    }
-                    openCountryDescription={openCountryDescription}
-                />
-            )}
+            <Filters
+                handleSearch={handleSearch}
+                handleDropdown={handleDropdown}
+            />
+            <CountriesBox
+                countries={
+                    inputValue === "" && dropdownValue === "selected"
+                        ? countries
+                        : seachedCountries
+                }
+                openCountryDescription={openCountryDescription}
+            />
             {!toggleView && (
                 <Description
                     country={country}
