@@ -77,7 +77,7 @@ const Container = () => {
         setToggleView(!toggleView);
         setInputValue("");
         setDropdownValue("all");
-        // setCountries(countries);
+        console.log(countries);
     };
 
     return (

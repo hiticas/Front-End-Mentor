@@ -5,7 +5,7 @@ const Filters = ({ handleSearch, handleDropdown }) => {
     const ref = useRef(null);
 
     return (
-        <div className="filter w-full flex flex-col gap-10 p-4 pt-6 sm:flex-row sm:justify-between sm:p-0 sm:pt-10">
+        <div className="filter w-full flex flex-col gap-10 p-4 pt-6 sm:flex-row sm:justify-between sm:pt-10 lg:px-0">
             <div className="search relative flex items-center justify-between h-14 w-full max-w-sm rounded-md shadow-[0_0_7px_rgba(0,0,0,0.3)] bg-[var(--header-color)]">
                 <img
                     src={searchIcon}
