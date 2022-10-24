@@ -5,22 +5,23 @@ const Filters = ({ handleSearch, handleDropdown }) => {
     const ref = useRef(null);
 
     return (
-        <div className="filters w-full flex justify-between">
-            <div className="search flex">
+        <div className="filters w-full flex flex-col gap-10 p-4 pt-6 sm:flex-row sm:justify-between sm:p-0 sm:pt-10">
+            <div className="search relative flex items-center justify-between h-14 w-full max-w-sm rounded-md shadow-md bg-[var(--header-color)]">
                 <img
                     src={searchIcon}
                     alt="Search icon"
-                    className="w-10 invert"
+                    className="absolute left-8 w-4 h-4 invert"
                 />
                 <input
+                    className="placeholder:text-gray-300 placeholder:text-sm text-gray-200 h-full w-full rounded-md bg-transparent pl-20 border border-transparent focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1"
                     ref={ref}
-                    // defaultValue={ref.current.value == null ? '' ! }
                     placeholder="Search for a country..."
                     onChange={() => handleSearch(ref.current.value)}
                 />
             </div>
-            <div className="dropdown">
+            <div className="dropdown h-14">
                 <select
+                    className="h-full p-2 rounded-md bg-[var(--header-color)] text-gray-200 text-sm border shadow-md border-transparent focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1"
                     defaultValue={"all"}
                     name="regions"
                     id="regions"

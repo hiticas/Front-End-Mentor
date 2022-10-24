@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 export const App = () => {
     return (
-        <div className="app">
+        <div className="app h-screen">
             <Header />
             <Container />
         </div>
