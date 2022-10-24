@@ -6,3 +6,47 @@
     --header-color: #2b3743;
     --container-color: #222e37;
 }
+
+.darkmode .header,
+.darkmode .main,
+.darkmode .country {
+    background-color: white;
+}
+
+.darkmode .country div span,
+.darkmode .country div p {
+    color: black;
+    font-weight: 600;
+}
+
+.darkmode .country div span {
+    font-weight: 500;
+}
+
+.darkmode .header h2 {
+    color: black;
+    font-weight: bold;
+}
+
+.darkmode .header img,
+.darkmode .search img {
+    --tw-invert: invert(0%);
+}
+
+.darkmode .header .btn_darkmode:hover img {
+    --tw-invert: invert(100%);
+}
+
+.darkmode .header .btn_darkmode:hover h2 {
+    color: white;
+}
+
+.darkmode .search input,
+.darkmode .dropdown select {
+    background-color: white;
+    color: black;
+}
+
+.darkmode .search input::placeholder {
+    color: black;
+}

@@ -4,7 +4,7 @@ const CountryBox = ({ country, openCountryDescription }) => {
     return (
         <div
             onClick={() => openCountryDescription(country)}
-            className="cursor-pointer mx-auto w-[270px] bg-[var(--header-color)] shadow-md rounded-md hover:shadow-xl hover:translate-y-[-10px] transition duration-50 delay-50 md:w-full lg:w-full"
+            className="country cursor-pointer mx-auto w-[270px] bg-[var(--header-color)] shadow-[0_0_7px_rgba(0,0,0,0.3)] rounded-md hover:shadow-xl hover:translate-y-[-10px] transition duration-50 delay-50 md:w-full lg:w-full"
         >
             <img
                 className="w-full h-40 object-cover rounded-t-md shadow-lg"

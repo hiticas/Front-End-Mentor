@@ -5,8 +5,8 @@ const Filters = ({ handleSearch, handleDropdown }) => {
     const ref = useRef(null);
 
     return (
-        <div className="filters w-full flex flex-col gap-10 p-4 pt-6 sm:flex-row sm:justify-between sm:p-0 sm:pt-10">
-            <div className="search relative flex items-center justify-between h-14 w-full max-w-sm rounded-md shadow-md bg-[var(--header-color)]">
+        <div className="filter w-full flex flex-col gap-10 p-4 pt-6 sm:flex-row sm:justify-between sm:p-0 sm:pt-10">
+            <div className="search relative flex items-center justify-between h-14 w-full max-w-sm rounded-md shadow-[0_0_7px_rgba(0,0,0,0.3)] bg-[var(--header-color)]">
                 <img
                     src={searchIcon}
                     alt="Search icon"
@@ -21,7 +21,7 @@ const Filters = ({ handleSearch, handleDropdown }) => {
             </div>
             <div className="dropdown h-14">
                 <select
-                    className="h-full p-2 rounded-md bg-[var(--header-color)] text-gray-200 text-sm border shadow-md border-transparent focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1"
+                    className="h-full p-2 rounded-md bg-[var(--header-color)] text-gray-200 text-sm border shadow-[0_0_7px_rgba(0,0,0,0.3)] border-transparent focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1"
                     defaultValue={"all"}
                     name="regions"
                     id="regions"

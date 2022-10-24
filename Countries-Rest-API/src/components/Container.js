@@ -81,7 +81,7 @@ const Container = () => {
     };
 
     return (
-        <div className="w-full bg-[var(--container-color)] min-h-[calc(100%-88px)] md:min-h-[calc(100%-80px)] lg:px-20">
+        <div className="main w-full bg-[var(--container-color)] min-h-[calc(100%-88px)] md:min-h-[calc(100%-80px)] lg:px-20">
             {toggleView && (
                 <Filters
                     handleSearch={handleSearch}
