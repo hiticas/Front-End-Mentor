@@ -9,6 +9,7 @@
 
 .darkmode .header,
 .darkmode .main,
+.darkmode .description,
 .darkmode .country {
     background-color: white;
 }
@@ -49,4 +50,21 @@
 
 .darkmode .search input::placeholder {
     color: black;
+}
+
+.darkmode .description p,
+.darkmode .description span {
+    color: black;
+}
+
+.darkmode .description button {
+    color: black;
+    font-weight: 600;
+    background-color: white;
+}
+
+.darkmode .description .box-country span {
+    color: black;
+    font-weight: 600;
+    background-color: white;
 }

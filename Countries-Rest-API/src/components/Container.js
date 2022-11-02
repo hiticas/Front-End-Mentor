@@ -41,12 +41,21 @@ const Container = () => {
                 }
             }
         } else {
+            // for (let i = 0; i < countries.length; i++) {
+            //     if (countries[i].continents[0] === dropdownValue) {
+            //         if (countries[i].name.common.includes(value)) {
+            //             seachedCountries.push(countries[i]);
+            //         }
+            //     }
+            // }
+
             for (let i = 0; i < countries.length; i++) {
-                if (countries[i].continents[0] === dropdownValue) {
-                    if (countries[i].name.common.includes(value)) {
-                        seachedCountries.push(countries[i]);
-                    }
-                }
+                if (countries[i].continents[0] !== dropdownValue) continue;
+
+                if (countries[i].name.common.includes(value) === false)
+                    continue;
+
+                seachedCountries.push(countries[i]);
             }
         }
 
