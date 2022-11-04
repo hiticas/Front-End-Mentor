@@ -43,11 +43,11 @@ const Description = ({ countries, country, onClose }) => {
                     alt={country.name.common}
                 />
                 <div>
-                    <p className="font-bold text-white text-3xl mb-3">
+                    <p className="font-bold text-white text-3xl mt-3 mb-5 md:pl-10 lg:pl-0">
                         {country.name.common}
                     </p>
-                    <div className="flex justify-between gap-28">
-                        <div className="font-bold text-white flex flex-col gap-3 py-5 tracking-wider md:pl-10 lg:pl-0 lg:w-full">
+                    <div className="flex flex-col gap-10 xl:flex-row">
+                        <div className="font-bold text-white flex flex-col gap-3 tracking-wider md:pl-10 lg:pl-0 lg:w-full">
                             <p>
                                 Native Name:
                                 <span className="text-gray-300 font-normal">
@@ -82,7 +82,7 @@ const Description = ({ countries, country, onClose }) => {
                                     {country.subregion}
                                 </span>
                             </p>
-                            <p className="mb-5">
+                            <p>
                                 Captital:
                                 <span className="text-gray-300">
                                     {" "}
@@ -90,7 +90,7 @@ const Description = ({ countries, country, onClose }) => {
                                 </span>
                             </p>
                         </div>
-                        <div className="font-bold text-white flex flex-col gap-3 py-5 tracking-wider md:pl-10 lg:pl-0 lg:w-full">
+                        <div className="font-bold text-white flex flex-col gap-3 mb-10 tracking-wider md:pl-10 lg:pl-0 lg:w-full">
                             <p>
                                 Top Level Domain:
                                 <span className="text-gray-300 font-normal">
@@ -126,24 +126,26 @@ const Description = ({ countries, country, onClose }) => {
                             </p>
                         </div>
                     </div>
-                    <div className="flex justify-start box-country">
-                        <p className="font-bold text-white text-xl mb-3 mr-3">
+                    <div className="flex flex-col mb-10 box-country md:pl-10 lg:pl-0 xl:mt-10">
+                        <p className="font-bold text-white text-xl mb-3">
                             Border countries:
                         </p>
-                        {bordersFullName.length === 0 ? (
-                            <p className="font-bold text-white text-xl">
-                                No borders...
-                            </p>
-                        ) : (
-                            bordersFullName.map((element, key) => (
-                                <span
-                                    className="text-white text-xs p-2 px-8 h-full mr-3 bg-[var(--header-color)] shadow-[0_0_7px_rgba(0,0,0,0.3)] rounded-sm"
-                                    key={key}
-                                >
-                                    {element}{" "}
-                                </span>
-                            ))
-                        )}
+                        <div className="flex gap-2 flex-wrap">
+                            {bordersFullName.length === 0 ? (
+                                <p className="font-bold text-white text-md">
+                                    No borders...
+                                </p>
+                            ) : (
+                                bordersFullName.map((element, key) => (
+                                    <span
+                                        className="text-white text-xs p-2 min-w-[100px] text-center bg-[var(--header-color)] shadow-[0_0_7px_rgba(0,0,0,0.3)] rounded-sm"
+                                        key={key}
+                                    >
+                                        {element}{" "}
+                                    </span>
+                                ))
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
