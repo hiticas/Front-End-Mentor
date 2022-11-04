@@ -19,12 +19,10 @@ const Filters = ({ handleSearch, handleDropdown }) => {
                     onChange={() => handleSearch(ref.current.value)}
                 />
             </div>
-            <div id="state" className="dropdown h-14">
+            <div className="dropdown h-14">
                 <select
-                    aria-labelledby="state"
                     className="h-full p-2 rounded-md bg-[var(--header-color)] text-gray-200 text-sm border shadow-[0_0_7px_rgba(0,0,0,0.3)] border-transparent focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1"
                     defaultValue={"all"}
-                    name="regions"
                     id="regions"
                     onChange={(event) => handleDropdown(event.target.value)}
                 >
