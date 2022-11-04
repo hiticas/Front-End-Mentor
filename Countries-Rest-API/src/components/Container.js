@@ -32,27 +32,27 @@ const Container = () => {
     }
 
     const handleSearch = (value) => {
-        setInputValue(value);
+        setInputValue(value.toLowerCase());
         seachedCountries = [];
         if (dropdownValue === "all") {
             for (let i = 0; i < countries.length; i++) {
-                if (countries[i].name.common.includes(value)) {
+                if (
+                    countries[i].name.common
+                        .toLowerCase()
+                        .includes(value.toLowerCase())
+                ) {
                     seachedCountries.push(countries[i]);
                 }
             }
         } else {
-            // for (let i = 0; i < countries.length; i++) {
-            //     if (countries[i].continents[0] === dropdownValue) {
-            //         if (countries[i].name.common.includes(value)) {
-            //             seachedCountries.push(countries[i]);
-            //         }
-            //     }
-            // }
-
             for (let i = 0; i < countries.length; i++) {
                 if (countries[i].continents[0] !== dropdownValue) continue;
 
-                if (countries[i].name.common.includes(value) === false)
+                if (
+                    countries[i].name.common
+                        .toLowerCase()
+                        .includes(value.toLowerCase()) === false
+                )
                     continue;
 
                 seachedCountries.push(countries[i]);
@@ -67,13 +67,17 @@ const Container = () => {
         seachedCountries = [];
         for (let i = 0; i < countries.length; i++) {
             if (value !== "all") {
-                if (countries[i].name.common.includes(inputValue)) {
+                if (
+                    countries[i].name.common.toLowerCase().includes(inputValue)
+                ) {
                     if (countries[i].continents[0].includes(value)) {
                         seachedCountries.push(countries[i]);
                     }
                 }
             } else {
-                if (countries[i].name.common.includes(inputValue)) {
+                if (
+                    countries[i].name.common.toLowerCase().includes(inputValue)
+                ) {
                     seachedCountries.push(countries[i]);
                 }
             }

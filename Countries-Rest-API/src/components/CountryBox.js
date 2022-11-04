@@ -16,7 +16,10 @@ const CountryBox = ({ country, openCountryDescription }) => {
                 <p className="text-lg font-bold mb-3">{country.name.common}</p>
                 <p>
                     Population:
-                    <span className="text-gray-300"> {country.population}</span>
+                    <span className="text-gray-300">
+                        {" "}
+                        {country.population.toLocaleString("en-US")} mil
+                    </span>
                 </p>
                 <p>
                     Region:

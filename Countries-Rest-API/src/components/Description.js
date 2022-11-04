@@ -36,13 +36,13 @@ const Description = ({ countries, country, onClose }) => {
             >
                 Back
             </button>
-            <div className="flex flex-col md:flex-row md:items-start lg:gap-28 lg:justify-between">
+            <div className="flex flex-col md:flex-row md:items-start lg:gap-10 lg:justify-between">
                 <img
                     className="mt-5 mb-5 min-h-[250px] max-w-[600px] md:w-1/2 lg:w-45% lg:min-h-[300px] xl:min-h-[350px]"
                     src={country.flags.svg}
                     alt={country.name.common}
                 />
-                <div>
+                <div className="lg:w-full">
                     <p className="font-bold text-white text-3xl mt-3 mb-5 md:pl-10 lg:pl-0">
                         {country.name.common}
                     </p>
@@ -65,7 +65,10 @@ const Description = ({ countries, country, onClose }) => {
                                 Population:
                                 <span className="text-gray-300 font-normal">
                                     {" "}
-                                    {country.population}
+                                    {country.population.toLocaleString(
+                                        "en-US"
+                                    )}{" "}
+                                    mil
                                 </span>
                             </p>
                             <p>
