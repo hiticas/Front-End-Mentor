@@ -108,7 +108,11 @@ const Container = () => {
                 />
             )}
             {!toggleView && (
-                <Description country={country} onClose={() => handleBack()} />
+                <Description
+                    country={country}
+                    countries={countries}
+                    onClose={() => handleBack()}
+                />
             )}
         </div>
     );

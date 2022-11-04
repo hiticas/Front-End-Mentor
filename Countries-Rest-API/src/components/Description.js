@@ -1,6 +1,6 @@
 import React from "react";
 
-const Description = ({ country, onClose }) => {
+const Description = ({ countries, country, onClose }) => {
     const currenciesKeys = Object.keys(country.currencies);
     const languageKeys = Object.keys(country.languages);
     const nativeNameKeys = Object.keys(country.name.nativeName);
@@ -20,9 +20,12 @@ const Description = ({ country, onClose }) => {
         nativeNames.push(country.name.nativeName[element].common);
     });
 
-    const borders = [];
+    const bordersFullName = [];
     country.borders?.forEach((element) => {
-        borders.push(element);
+        const searchObject = countries.find(
+            (country) => country.cca3 === element
+        );
+        bordersFullName.push(searchObject.name.common);
     });
 
     return (
@@ -127,12 +130,12 @@ const Description = ({ country, onClose }) => {
                         <p className="font-bold text-white text-xl mb-3 mr-3">
                             Border countries:
                         </p>
-                        {borders.length === 0 ? (
+                        {bordersFullName.length === 0 ? (
                             <p className="font-bold text-white text-xl">
                                 No borders...
                             </p>
                         ) : (
-                            borders.map((element, key) => (
+                            bordersFullName.map((element, key) => (
                                 <span
                                     className="text-white text-xs p-2 px-8 h-full mr-3 bg-[var(--header-color)] shadow-[0_0_7px_rgba(0,0,0,0.3)] rounded-sm"
                                     key={key}
