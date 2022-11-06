@@ -12,8 +12,10 @@ const CountryBox = ({ country, openCountryDescription }) => {
                 alt={country.name.common}
             />
 
-            <div className="p-6 pb-12 text-white">
-                <p className="text-lg font-bold mb-3">{country.name.common}</p>
+            <div className="p-6 pb-8 text-white">
+                <p className="text-base font-bold mb-3">
+                    {country.name.common}
+                </p>
                 <p>
                     Population:
                     <span className="text-gray-300">
