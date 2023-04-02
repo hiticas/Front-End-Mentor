@@ -11,7 +11,6 @@ type PersonalInfoProps = FormItems & {
 const PersonalInfo = ({name, email, phone, updateForm, nameError, emailError, phoneError}: PersonalInfoProps) => {
 	return (
 		<div className="your_info">
-			<div>PersonalInfo</div>
 			<div className="personal_data">
 				<label htmlFor="name">Name</label>
 				<input 

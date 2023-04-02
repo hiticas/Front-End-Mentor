@@ -1,19 +1,24 @@
 @import './styles/variables.scss';
 @import './styles/breakpoints.scss';
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: var(--font-family-regular);
 }
 
-.app {
+.app {    
+	position: relative;
+    height: 100vh;
 	background-color: lightblue;
-	button {
-		cursor: pointer;
-		&:hover {
-			background-color: lightblue;
-		}
-	}
 	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 	margin: 0 auto;
 	max-width: 1400px;
 	.tabs {
@@ -30,16 +35,47 @@ body {
 			}
 		}
 	}
-	form {
+	.form {
 		width: 70%;
+		.btn_actions {
+			position: absolute;
+			bottom: 0;
+			button {
+				cursor: pointer;
+				background-color: lightblue;
+				&:hover {
+					background-color: blue;
+				}
+			}
+		}
+		
 	}
-	label {
-		color: var(--purplish-blue);
-	}
+	
+	
 } 
+
+@include tablet {
+	.app {
+		flex-direction: row;
+		background-color: lightgoldenrodyellow;
+		.form {
+			.btn_actions {
+				position: relative;
+				button {
+					background-color: lightcoral;
+					&:hover {
+						background-color: red;
+					}
+				}
+			}
+		}
+	}
+}
 
 @include desktop {
 	.app {
-		background-color: var(--purplish-blue);
+		align-items: center;
+		justify-content: center;
+		background-color: lightcoral;
 	}
 }

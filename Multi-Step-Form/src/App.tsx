@@ -1,14 +1,19 @@
 import { FormEvent, useState } from "react";
-import { saveAs } from 'file-saver';
+// import { saveAs } from 'file-saver';
 
 import './App.scss'
 import './index.css'
 
 import useMultiForm from './hooks/useMultiForm'
+
+import Tab from './components/Tab/Tab'
+import Section from './components/Section/Section'
+
 import PersonalInfo from './components/PersonalInfo/PersonalInfo'
 import SelectPlan from './components/SelectPlan/SelectPlan'
 import PickAddOns from './components/PickAddOns/PickAddOns'
 import Summary from './components/Summary/Summary'
+import ThankYou from './components/ThankYou/ThankYou'
 
 export type FormItems = {
 	name: string;
@@ -102,37 +107,73 @@ function App() {
 		}
 	}
 
+	const sections = ["Your Info", "Select Plan", "Add-Ons", "Summary"];
+	const sectionSubtitles = [
+		"Please provide your name, email address, and phone number.",
+		"You have the option of monthly or yearly billing.",
+		"Add-ons help enhance your gaming experience.",
+		"Double-check everything looks OK before confirming.",
+	];
+
 	return (
 		<div className="app">
 			{!finish && 
-				<div className="tabs">
-					<div className={`tab ${currentIndex === 0 ? "active" : ""}`} onClick={() => handleChangeSection(0)}>1</div>
-					<div className={`tab ${currentIndex === 1 ? "active" : ""}`} onClick={() => handleChangeSection(1)}>2</div>
-					<div className={`tab ${currentIndex === 2 ? "active" : ""}`} onClick={() => handleChangeSection(2)}>3</div>
-					<div className={`tab ${currentIndex === 3 ? "active" : ""}`} onClick={() => handleChangeSection(3)}>4</div>
-				</div>
+				<>
+					<div className="tabs">
+						{sections.map((section, index) => (
+							<Tab
+								key={index}
+								section={index + 1}
+								label={section}
+								className={`tab ${currentIndex === index ? "active" : ""}`}
+								onClick={() => handleChangeSection(index)}
+							/>
+						))}
+					</div>
+					<form className="form" onSubmit={handleSubmit}>
+						{sections.map((sectionTitle, index) => {
+							let sectionComponent;
+							if (index === 0) {
+								sectionComponent = (
+									<PersonalInfo {...formData} updateForm={updateForm} nameError={nameError} emailError={emailError} phoneError={phoneError}/>
+								);
+							} else if (index === 1) {
+								sectionComponent = (
+									<SelectPlan {...formData} updateForm={updateForm} />
+								);
+							} else if (index === 2) {
+								sectionComponent = (
+									<PickAddOns {...formData} updateForm={updateForm} />
+								);
+							} else if (index === 3) {
+								sectionComponent = (
+									<Summary
+										goToSection={goToSection}
+										{...formData}
+										updateForm={updateForm}
+									/>
+								);
+							}
+							return (
+								currentIndex === index && 
+								<Section
+									key={index}
+									title={sectionTitle}
+									subTitle={sectionSubtitles[index]}
+									>
+									{sectionComponent}
+								</Section>
+							);
+						})}
+
+						<div className="btn_actions">
+							{!isFirstStep && (<button type="button" onClick={goBackwards}>Go back</button>)}
+							<button type="submit">{isLastStep ? "Confirm" : "Next Step"}</button>
+						</div>
+					</form>
+				</>
 			}
-			<form onSubmit={handleSubmit}>
-				{!finish && 
-					<div>
-						{currentIndex === 0 && <PersonalInfo {...formData} updateForm={updateForm} nameError={nameError} emailError={emailError} phoneError={phoneError} />}
-						{currentIndex === 1 && <SelectPlan {...formData} updateForm={updateForm}/>}
-						{currentIndex === 2 && <PickAddOns {...formData} updateForm={updateForm}/>}
-						{currentIndex === 3 && <Summary goToSection={goToSection} {...formData} updateForm={updateForm} />}
-						{!isFirstStep && (<button type="button" onClick={goBackwards}>Go back</button>)}
-						<button type="submit">{isLastStep ? "Confirm" : "Next Step"}</button>
-					</div>
-				}
-				{finish && 
-					<div>
-						<h2>Trank You!</h2>
-						<h1>{formData.name}</h1>
-						<h3>{formData.email}</h3>
-						<p>{formData.phone}</p>
-						<h2>{formData.plan}</h2>
-					</div>
-				}
-			</form>
+			{finish && <ThankYou {...formData}/>}
 		</div>
 	)
 }

@@ -6,6 +6,12 @@
 	}
 }
 
+@mixin tablet {
+	@media (min-width: 678px) {
+		@content;
+	}
+}
+
 @mixin desktop {
 	@media (min-width: 1440px) {
 		@content;

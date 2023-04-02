@@ -35,20 +35,18 @@ const Summary = ({
 	}, 0);
 
 	return (
-		<div>
-			<h2>Finishing up</h2>
-			<p>Double-check everything looks OK before confirming.</p>
+		<div className="summary">
 			<div>
 				<div>
-				<div data-left>
-					{plan} {planLength ? "(Yearly)" : "(Monthly)"}
-					<button type="button" onClick={() => goToSection(1)}>Change</button>
-				</div>
-				<div data-right>
-					$
-					{!planLength ? planOptions[plan].monthly : planOptions[plan].yearly}
-					/{!planLength ? "mo" : "yr"}
-				</div>
+					<div data-left>
+						{plan} {planLength ? "(Yearly)" : "(Monthly)"}
+						<button type="button" onClick={() => goToSection(1)}>Change</button>
+					</div>
+					<div data-right>
+						$
+						{!planLength ? planOptions[plan].monthly : planOptions[plan].yearly}
+						/{!planLength ? "mo" : "yr"}
+					</div>
 				</div>
 				{hasOnlineServices && (
 				<div>
