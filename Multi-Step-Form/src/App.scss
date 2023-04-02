@@ -1,9 +1,45 @@
+@import './styles/variables.scss';
+@import './styles/breakpoints.scss';
+
 body {
 	font-family: var(--font-family-regular);
 }
 
 .app {
-	h1 {
-		color: var(--primary-color);
+	background-color: lightblue;
+	button {
+		cursor: pointer;
+		&:hover {
+			background-color: lightblue;
+		}
+	}
+	display: flex;
+	margin: 0 auto;
+	max-width: 1400px;
+	.tabs {
+		width: 30%;
+		.tab {
+			cursor: pointer;
+			&.active {
+				font-weight: bold;
+				font-size: 20px;
+			}
+			&:hover {
+				font-weight: bold;
+				color: blue;
+			}
+		}
+	}
+	form {
+		width: 70%;
+	}
+	label {
+		color: var(--purplish-blue);
+	}
+} 
+
+@include desktop {
+	.app {
+		background-color: var(--purplish-blue);
 	}
 }
