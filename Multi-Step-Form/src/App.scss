@@ -9,12 +9,20 @@
 
 body {
 	font-family: var(--font-family-regular);
+	background-color: var(--magnolia);
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
 .app {    
 	position: relative;
     height: 100vh;
-	background-color: lightblue;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -22,21 +30,22 @@ body {
 	margin: 0 auto;
 	max-width: 1400px;
 	.tabs {
-		width: 30%;
-		.tab {
-			cursor: pointer;
-			&.active {
-				font-weight: bold;
-				font-size: 20px;
-			}
-			&:hover {
-				font-weight: bold;
-				color: blue;
-			}
-		}
+		background-image: url('./assets/images/bg-sidebar-mobile.svg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 100%;
+		height: 200px;
+
+		display: flex;
+		justify-content: center;
+		gap: 25px;
+		padding-top: 45px;
 	}
 	.form {
 		width: 70%;
+		margin-top: -83px;
+		background-color: white;
 		.btn_actions {
 			position: absolute;
 			bottom: 0;
@@ -50,15 +59,28 @@ body {
 		}
 		
 	}
-	
-	
 } 
 
 @include tablet {
 	.app {
 		flex-direction: row;
 		background-color: lightgoldenrodyellow;
+		height: 600px;
+		padding: 20px;
+		.tabs {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			padding-top: 0;
+			padding: 30px;
+
+			height: 100%;
+			width: 250px;
+			background: no-repeat url('./assets/images/bg-sidebar-desktop.svg') 100% 100%;
+			border-radius: 10px;
+		}
 		.form {
+			margin-top: 0;
 			.btn_actions {
 				position: relative;
 				button {
@@ -74,8 +96,8 @@ body {
 
 @include desktop {
 	.app {
-		align-items: center;
-		justify-content: center;
+		// align-items: center;
+		// justify-content: center;
 		background-color: lightcoral;
 	}
 }

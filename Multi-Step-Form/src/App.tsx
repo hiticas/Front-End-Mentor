@@ -108,6 +108,7 @@ function App() {
 	}
 
 	const sections = ["Your Info", "Select Plan", "Add-Ons", "Summary"];
+	const sectionTitles = ["Personal info", "Select your plan", "Pick add-ons", "Finishing up"];
 	const sectionSubtitles = [
 		"Please provide your name, email address, and phone number.",
 		"You have the option of monthly or yearly billing.",
@@ -117,61 +118,59 @@ function App() {
 
 	return (
 		<div className="app">
+			<div className="tabs">
+				{sections.map((section, index) => (
+					<Tab
+						key={index}
+						section={index + 1}
+						label={section}
+						className={`tab ${currentIndex === index ? "active" : ""}`}
+						onClick={() => handleChangeSection(index)}
+					/>
+				))}
+			</div>
 			{!finish && 
-				<>
-					<div className="tabs">
-						{sections.map((section, index) => (
-							<Tab
-								key={index}
-								section={index + 1}
-								label={section}
-								className={`tab ${currentIndex === index ? "active" : ""}`}
-								onClick={() => handleChangeSection(index)}
-							/>
-						))}
-					</div>
-					<form className="form" onSubmit={handleSubmit}>
-						{sections.map((sectionTitle, index) => {
-							let sectionComponent;
-							if (index === 0) {
-								sectionComponent = (
-									<PersonalInfo {...formData} updateForm={updateForm} nameError={nameError} emailError={emailError} phoneError={phoneError}/>
-								);
-							} else if (index === 1) {
-								sectionComponent = (
-									<SelectPlan {...formData} updateForm={updateForm} />
-								);
-							} else if (index === 2) {
-								sectionComponent = (
-									<PickAddOns {...formData} updateForm={updateForm} />
-								);
-							} else if (index === 3) {
-								sectionComponent = (
-									<Summary
-										goToSection={goToSection}
-										{...formData}
-										updateForm={updateForm}
-									/>
-								);
-							}
-							return (
-								currentIndex === index && 
-								<Section
-									key={index}
-									title={sectionTitle}
-									subTitle={sectionSubtitles[index]}
-									>
-									{sectionComponent}
-								</Section>
+				<form className="form" onSubmit={handleSubmit}>
+					{sectionTitles.map((sectionTitle, index) => {
+						let sectionComponent;
+						if (index === 0) {
+							sectionComponent = (
+								<PersonalInfo {...formData} updateForm={updateForm} nameError={nameError} emailError={emailError} phoneError={phoneError}/>
 							);
-						})}
+						} else if (index === 1) {
+							sectionComponent = (
+								<SelectPlan {...formData} updateForm={updateForm} />
+							);
+						} else if (index === 2) {
+							sectionComponent = (
+								<PickAddOns {...formData} updateForm={updateForm} />
+							);
+						} else if (index === 3) {
+							sectionComponent = (
+								<Summary
+									goToSection={goToSection}
+									{...formData}
+									updateForm={updateForm}
+								/>
+							);
+						}
+						return (
+							currentIndex === index && 
+							<Section
+								key={index}
+								title={sectionTitle}
+								subTitle={sectionSubtitles[index]}
+								>
+								{sectionComponent}
+							</Section>
+						);
+					})}
 
-						<div className="btn_actions">
-							{!isFirstStep && (<button type="button" onClick={goBackwards}>Go back</button>)}
-							<button type="submit">{isLastStep ? "Confirm" : "Next Step"}</button>
-						</div>
-					</form>
-				</>
+					<div className="btn_actions">
+						{!isFirstStep && (<button type="button" onClick={goBackwards}>Go back</button>)}
+						<button type="submit">{isLastStep ? "Confirm" : "Next Step"}</button>
+					</div>
+				</form>
 			}
 			{finish && <ThankYou {...formData}/>}
 		</div>

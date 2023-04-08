@@ -12,7 +12,7 @@ const Tab = ({ section, label, className, onClick }: TabProps) => {
         <div className={className} onClick={onClick}>
             <div className='section_number'>{section}</div>
             <div className='section_details'>
-                <p>Step{section}</p>
+                <p>Step {section}</p>
                 <h3>{label}</h3>
             </div>
         </div>
