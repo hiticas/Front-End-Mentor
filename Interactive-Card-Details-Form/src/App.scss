@@ -1,5 +1,40 @@
-.card {
-	h1 {
-		color: blue;
+.app {
+	height: 100vh;
+	width: 100%;
+	background-image: url(./assets/images/bg-main-desktop.png);
+	background-repeat: no-repeat;
+	background-size: 40%  100%;
+
+	display: flex;
+	.cards, .form {
+		width: 50%;
+	}
+	.cards {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		align-items: flex-end;
+		justify-content: center;
+		.cardA, .cardB {
+			width: 500px;
+			height: 270px;
+			background-color: grey;
+			border-radius: 12px;
+		}
+		.cardB {
+			margin-right: -80px;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.form_title {
+			height: 500px;
+			width: 400px;
+			border: 1px solid black;
+		}
 	}
 }
