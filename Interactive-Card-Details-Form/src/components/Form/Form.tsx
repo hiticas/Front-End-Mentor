@@ -1,7 +1,7 @@
 import './Form.scss'
 import { useState } from 'react';
-import icon_complete from './../../../assets/images/icon-complete.svg';
-import Input from '../../Input/Input';
+import icon_complete from './../../assets/images/icon-complete.svg';
+import Input from '../Input/Input';
 
 interface FormProps {
 	cardName: (name: string) => void;

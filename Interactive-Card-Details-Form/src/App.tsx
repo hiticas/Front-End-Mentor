@@ -1,7 +1,7 @@
 import './App.scss'
 import { useState } from 'react';
 import Cards from './components/Cards/Cards'
-import Form from './components/Cards/Form/Form'
+import Form from './components/Form/Form'
 
 const App: React.FC = () => {
 	const [nameText, setNameText] = useState<string>('');
