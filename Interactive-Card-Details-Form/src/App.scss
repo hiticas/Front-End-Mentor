@@ -3,26 +3,60 @@
 	width: 100%;
 	background-image: url(./assets/images/bg-main-desktop.png);
 	background-repeat: no-repeat;
-	background-size: 40%  100%;
+	background-size: 37%  100%;
 
 	display: flex;
-	.cards, .form {
-		width: 50%;
-	}
+	color: white;
 	.cards {
 		display: flex;
 		flex-direction: column;
 		gap: 50px;
 		align-items: flex-end;
 		justify-content: center;
+		width: 53%;
 		.cardA, .cardB {
 			width: 500px;
 			height: 270px;
 			background-color: grey;
 			border-radius: 12px;
+			padding: 30px;
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		}
+		.cardA {
+			background-image: url(./assets/images/bg-card-front.png);
+			background-size: 100%;
+			margin-right: 95px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			.logo {
+				width: 90px;
+			}
+			.code {
+				margin-bottom: -55px;
+				letter-spacing: 5px;
+				font-size: 30px;
+			}
+			.details {
+				display: flex;
+				justify-content: space-between;
+				.name {
+					font-size: 20px;
+				}
+				.date {
+					font-size: 20px;
+				}
+			}
 		}
 		.cardB {
-			margin-right: -80px;
+			background-image: url(./assets/images/bg-card-back.png);
+			background-size: 100%;
+			.ccv {
+				text-align: right;
+				padding-right: 32px;
+				padding-top: 94px;
+				letter-spacing: 1px;
+			}
 		}
 	}
 
@@ -31,10 +65,52 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		.form_title {
-			height: 500px;
+		width: 44%;
+		.form_row {
 			width: 400px;
-			border: 1px solid black;
+			margin-bottom: 20px;
+			.input::placeholder {
+				color: grey;
+				opacity: 0.6; /* Firefox */
+			}
+			.input {
+				height: 50px;
+				width: 100%;
+				padding: 10px;
+				font-size: 18px;
+				border-radius: 7px;
+				color: rgba(128, 128, 128, 0.6);
+				border: 1px solid rgba(128, 128, 128, 0.4);
+			}
+			.label {
+				color: hsl(278, 68%, 11%);
+				font-weight: 500;
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			&.column {
+				display: flex;
+				gap: 20px;
+				.col {
+					width: 50%;
+				}
+				.inputs {
+					display: flex;
+					gap: 15px;
+				}
+			}
+			.button {
+				width: 100%;
+				height: 50px;
+				margin-top: 20px;
+				background-color: hsl(278, 68%, 11%);
+				color: white;
+				outline: none;
+				border: 0;
+				border-radius: 7px;
+				font-size: 18px;
+				cursor: pointer;
+			}
 		}
 	}
 }
