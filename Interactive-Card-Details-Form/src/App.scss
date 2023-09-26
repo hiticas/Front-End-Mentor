@@ -15,8 +15,8 @@
 		justify-content: center;
 		width: 53%;
 		.cardA, .cardB {
-			width: 500px;
-			height: 270px;
+			width: 450px;
+			height: 247px;
 			background-color: grey;
 			border-radius: 12px;
 			padding: 30px;
@@ -35,7 +35,7 @@
 			.code {
 				margin-bottom: -55px;
 				letter-spacing: 5px;
-				font-size: 30px;
+				font-size: 25px;
 			}
 			.details {
 				display: flex;
@@ -53,8 +53,8 @@
 			background-size: 100%;
 			.ccv {
 				text-align: right;
-				padding-right: 32px;
-				padding-top: 94px;
+				padding-right: 25px;
+				padding-top: 80px;
 				letter-spacing: 1px;
 			}
 		}
@@ -85,7 +85,7 @@
 			.label {
 				color: hsl(278, 68%, 11%);
 				font-weight: 500;
-				font-size: 20px;
+				font-size: 14px;
 				margin-bottom: 10px;
 			}
 			&.column {
