@@ -13,11 +13,16 @@ const Container = () => {
     const [dropdownValue, setDropdownValue] = useState("all");
 
     const getApiData = async () => {
-        const response = await fetch("https://restcountries.com/v3.1/all");
-        const data = await response.json();
-        if (false) {
-        } else if (false) {
+        const storedData = localStorage.getItem("countriesData");
+
+        if (storedData) {
+            const parsedData = JSON.parse(storedData);
+            setCountries(parsedData);
         } else {
+            const response = await fetch("https://restcountries.com/v3.1/all");
+            const data = await response.json();
+    
+            localStorage.setItem("countriesData", JSON.stringify(data));
             setCountries(data);
         }
     };
