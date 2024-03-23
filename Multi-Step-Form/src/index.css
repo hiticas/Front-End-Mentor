@@ -1,14 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
-	font-family: 'Ubuntu Bold';
-	src: url('./styles/fonts/Ubuntu-Bold.ttf') format('truetype');
+  font-family: "Ubuntu Bold";
+  src: url("./styles/fonts/Ubuntu-Bold.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'Ubuntu Medium';
-	src: url('./styles/fonts/Ubuntu-Medium.ttf') format('truetype');
+  font-family: "Ubuntu Medium";
+  src: url("./styles/fonts/Ubuntu-Medium.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'Ubuntu Regular';
-	src: url('./styles/fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-family: "Ubuntu Regular";
+  src: url("./styles/fonts/Ubuntu-Regular.ttf") format("truetype");
+}
+
+.app {
+  font-family: "Ubuntu Regular";
 }
