@@ -4,7 +4,6 @@ interface MyFormData {
   name: string;
   email: string;
   phone: string;
-  country: string;
 }
 
 interface Step1Props {
@@ -22,6 +21,18 @@ const Step1: React.FC<Step1Props> = ({ formData, onFormChange }) => {
         value={formData.name}
         onChange={(e) => onFormChange("name", e.target.value)}
         placeholder="Enter your name"
+      />
+      <input
+        type="text"
+        value={formData.email}
+        onChange={(e) => onFormChange("email", e.target.value)}
+        placeholder="Enter your email"
+      />
+      <input
+        type="text"
+        value={formData.phone}
+        onChange={(e) => onFormChange("phone", e.target.value)}
+        placeholder="Enter your phone"
       />
     </div>
   );

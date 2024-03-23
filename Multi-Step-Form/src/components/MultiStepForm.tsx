@@ -10,7 +10,11 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
-  country: string;
+  plan: string;
+  subscription: string;
+  onlineServices: boolean;
+  largeStorage: boolean;
+  customizableProfile: boolean;
 }
 
 const MultiStepForm: React.FC = () => {
@@ -21,7 +25,11 @@ const MultiStepForm: React.FC = () => {
     name: "",
     email: "",
     phone: "",
-    country: "",
+    plan: "arcade",
+    subscription: "monthly",
+    onlineServices: false,
+    largeStorage: false,
+    customizableProfile: false,
   });
 
   const nextStep = () => {
@@ -32,7 +40,7 @@ const MultiStepForm: React.FC = () => {
     setStep(step - 1);
   };
 
-  const handleFormChange = (fieldName: string, value: string) => {
+  const handleFormChange = (fieldName: string, value: string | boolean) => {
     setFormData({ ...formData, [fieldName]: value });
   };
 
@@ -53,7 +61,7 @@ const MultiStepForm: React.FC = () => {
       case 3:
         return <Step3 formData={formData} onFormChange={handleFormChange} />;
       case 4:
-        return <Step4 formData={formData} onFormChange={handleFormChange} />;
+        return <Step4 formData={formData} onStepClick={handleStepClick} />;
       default:
         return null;
     }
@@ -74,9 +82,21 @@ const MultiStepForm: React.FC = () => {
         <div className="step">{renderStep()}</div>
         {!confirmed && (
           <div className="actions">
-            {step !== 1 && <button onClick={previousStep}>Previous</button>}
-            {step !== 4 && <button onClick={nextStep}>Next</button>}
-            {step === 4 && <button onClick={handleConfirm}>Complete</button>}
+            {step !== 1 && (
+              <button className="border-2" onClick={previousStep}>
+                Previous
+              </button>
+            )}
+            {step !== 4 && (
+              <button className="border-2" onClick={nextStep}>
+                Next
+              </button>
+            )}
+            {step === 4 && (
+              <button className="border-2 bg-lime-500" onClick={handleConfirm}>
+                Complete
+              </button>
+            )}
           </div>
         )}
       </div>
