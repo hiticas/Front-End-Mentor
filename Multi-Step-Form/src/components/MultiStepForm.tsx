@@ -66,7 +66,7 @@ const MultiStepForm: React.FC = () => {
   console.log("formData", formData);
 
   return (
-    <div className="multi-step-form w-full max-w-[1200px] flex mx-auto">
+    <div className="multi-step-form w-full flex ">
       <div className="sidebar-wrapper w-[30%]">
         <Sidebar currentStep={step} onStepClick={handleStepClick} />
       </div>
