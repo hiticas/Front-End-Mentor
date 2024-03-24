@@ -67,6 +67,39 @@ const MultiStepForm: React.FC = () => {
     }
   };
 
+  const renderActions = () => {
+    return (
+      !confirmed && (
+        <div className="actions h-full flex justify-between items-center w-[90%] mx-auto">
+          {step !== 1 && (
+            <button
+              className="h-[40px] font-bold text-slate-400 hover:text-slate-800"
+              onClick={previousStep}
+            >
+              Go Back
+            </button>
+          )}
+          {step !== 4 && (
+            <button
+              className="ml-[auto] font-bold h-[45px] w-[110px] bg-blue-950 rounded-md text-white hover:bg-blue-800"
+              onClick={nextStep}
+            >
+              Next Step
+            </button>
+          )}
+          {step === 4 && (
+            <button
+              className="ml-[auto] font-bold h-[45px] w-[110px] bg-indigo-700 rounded-md text-white hover:bg-indigo-600"
+              onClick={handleConfirm}
+            >
+              Confirm
+            </button>
+          )}
+        </div>
+      )
+    );
+  };
+
   const handleStepClick = (selectedStep: number) => {
     setStep(selectedStep);
   };
@@ -74,31 +107,16 @@ const MultiStepForm: React.FC = () => {
   console.log("formData", formData);
 
   return (
-    <div className="multi-step-form w-full flex ">
-      <div className="sidebar-wrapper w-[30%]">
+    <div className="multi-step-form sm:max-w-[940px] sm:p-5 sm:flex sm:rounded-lg">
+      <div className="sidebar-wrapper  w-full sm:w-[275px]">
         <Sidebar currentStep={step} onStepClick={handleStepClick} />
       </div>
-      <div className="content-wrapper w-[70%]">
+      <div className="content-wrapper relative bg-white w-[90%] mx-auto mt-[-90px] h-[500px] p-[30px] rounded-lg sm:w-[625px]">
         <div className="step">{renderStep()}</div>
-        {!confirmed && (
-          <div className="actions">
-            {step !== 1 && (
-              <button className="border-2" onClick={previousStep}>
-                Previous
-              </button>
-            )}
-            {step !== 4 && (
-              <button className="border-2" onClick={nextStep}>
-                Next
-              </button>
-            )}
-            {step === 4 && (
-              <button className="border-2 bg-lime-500" onClick={handleConfirm}>
-                Complete
-              </button>
-            )}
-          </div>
-        )}
+        <div className="hidden sm:block">{renderActions()}</div>
+      </div>
+      <div className="absolute bottom-0 bg-white w-full h-[80px] sm:hidden">
+        {renderActions()}
       </div>
     </div>
   );

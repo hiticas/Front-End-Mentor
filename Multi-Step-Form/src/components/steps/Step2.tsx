@@ -23,33 +23,51 @@ const Step2: React.FC<Step2Props> = ({ formData, onFormChange }) => {
     <div>
       <h2 className="font-bolder">Step 2: Contact Information</h2>
       <div className="select-plan">
-        <label>
-          <input
-            type="radio"
-            value="arcade"
-            checked={formData.plan === "arcade"}
-            onChange={handleRadioChange}
-          />
-          Arcade
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="advance"
-            checked={formData.plan === "advance"}
-            onChange={handleRadioChange}
-          />
-          Advance
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="pro"
-            checked={formData.plan === "pro"}
-            onChange={handleRadioChange}
-          />
-          Pro
-        </label>
+        <div>
+          <label>
+            <input
+              type="radio"
+              value="arcade"
+              checked={formData.plan === "arcade"}
+              onChange={handleRadioChange}
+            />
+            Arcade
+          </label>
+          <h3>{formData.subscription === "monthly" ? "+9/mo" : "+90/yr"}</h3>
+          <h3>
+            {formData.subscription === "monthly" ? "" : "two months free"}
+          </h3>
+        </div>
+        <div>
+          <label>
+            <input
+              type="radio"
+              value="advance"
+              checked={formData.plan === "advance"}
+              onChange={handleRadioChange}
+            />
+            Advance
+          </label>
+          <h3>{formData.subscription === "monthly" ? "+12/mo" : "+120/yr"}</h3>
+          <h3>
+            {formData.subscription === "monthly" ? "" : "two months free"}
+          </h3>
+        </div>
+        <div>
+          <label>
+            <input
+              type="radio"
+              value="pro"
+              checked={formData.plan === "pro"}
+              onChange={handleRadioChange}
+            />
+            Pro
+          </label>
+          <h3>{formData.subscription === "monthly" ? "+15/mo" : "+150/yr"}</h3>
+          <h3>
+            {formData.subscription === "monthly" ? "" : "two months free"}
+          </h3>
+        </div>
       </div>
       <div className="select-subscription">
         <label>
