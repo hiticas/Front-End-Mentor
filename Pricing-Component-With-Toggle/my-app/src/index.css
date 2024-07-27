@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-body;
+}
+
+@layer utilities {
+  .text-md {
+    font-size: 16px;
+  }
+}
+
+.main {
+  @apply flex flex-col relative overflow-hidden p-8 pb-20 bg-[#f7f7f7] xl:h-lvh;
+}
+
+.title {
+  @apply text-3xl font-extrabold text-gray-500 text-center mt-16 mb-12 tracking-wider z-10 xl:mt-8;
+}
+
+.cards {
+  @apply flex flex-col justify-center gap-8 z-10 sm:flex-row sm:flex-wrap xl:gap-0;
+}
+
+.bg1 {
+  @apply absolute top-0 right-[-190px] xl:right-0;
+}
+
+.bg2 {
+  @apply hidden xl:block absolute bottom-0 left-[-190px] xl:left-0 xl:h-[300px];
+}
+
+.toggle_wrapper {
+  @apply flex justify-center items-center text-md font-bold mb-20 z-10 tracking-wider;
+}
+
+.toggle_button {
+  @apply flex items-center w-[60px] h-8 rounded-full bg-gradient-to-r from-lightpurple to-purple transition duration-300 focus:outline-none shadow xl:hover:from-[#9b9fee88] xl:hover:to-[#7378e098];
+}
+
+.toggle_circle {
+  @apply w-6 h-6 rounded-full bg-white shadow transform duration-300 ease-in-out;
+}
+
+.card {
+  @apply w-full h-full shadow-lg rounded-lg p-8 text-center sm:w-[400px] xl:w-[370px];
+}
+
+.card-purple {
+  @apply text-white bg-gradient-to-b from-lightpurple to-purple xl:pt-[56px] xl:mt-[-26px] xl:h-[530px];
+}
+
+.card-white {
+  @apply text-gray-600 bg-white xl:h-[480px];
+}
+
+.feature {
+  @apply py-4 text-md font-semibold  tracking-wide border-b-[1px];
+}
+
+.btn {
+  @apply mt-8 w-full rounded-md py-3 font-semibold tracking-widest;
+}
+
+.btn-purple {
+  @apply text-purple bg-white border-2 border-purple xl:hover:bg-purple xl:hover:text-white xl:hover:border-white;
+}
+
+.btn-white {
+  @apply text-white border-2 border-white bg-gradient-to-r from-lightpurple to-purple xl:hover:from-white xl:hover:to-white xl:hover:border-purple xl:hover:text-purple;
+}
