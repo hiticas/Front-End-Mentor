@@ -1,11 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: "Outfit", sans-serif;
-  color: white;
-  background-color: #d5e1ef;
+body {
+  @apply font-montserrat;
+}
+
+.app {
+  @apply flex justify-center items-center h-screen bg-lightblue;
+}
+
+.qr_wrapper {
+  @apply w-[310px] mx-auto bg-white p-4 rounded-2xl shadow-2xl;
+}
+
+.qr_image {
+  @apply rounded-2xl mb-6;
+}
+
+.qr_title {
+  @apply text-xl font-bold text-gray-800 text-center my-4 leading-tight;
+}
+
+.qr_description {
+  @apply text-sm text-slate-500 text-center mb-6;
 }
