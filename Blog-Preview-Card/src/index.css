@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-figtree;
+}
+
+.app {
+  @apply flex flex-col justify-center items-center h-screen bg-yellow;
+}
+
+.wrapper {
+  @apply w-[380px] p-6 bg-white rounded-3xl border border-black shadow-shadow1;
+}
+
+.illustration {
+  @apply w-full h-[200px] rounded-xl object-cover mb-6;
+}
+
+.tag {
+  @apply bg-yellow w-fit rounded mb-4;
+}
+
+.tag p {
+  @apply px-4 py-1 font-bold text-sm;
+}
+
+.date {
+  @apply mb-4 text-sm;
+}
+
+.title {
+  @apply text-2xl mb-4 font-bold hover:text-yellow hover:cursor-pointer;
+}
+
+.description {
+  @apply mb-6 text-gray500;
+}
+
+.author {
+  @apply flex items-center gap-4;
+}
+
+.author img {
+  @apply w-[40px];
+}
+
+.author p {
+  @apply text-sm font-extrabold tracking-tighter;
+}

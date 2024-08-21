@@ -11,15 +11,12 @@ The designs were created to the following widths:
 
 ## Colors
 
-### Primary
-
 - Yellow: hsl(47, 88%, 63%)
 
-### Neutral
-
 - White: hsl(0, 0%, 100%)
-- Grey: hsl(0, 0%, 50%)
-- Black: hsl(0, 0%, 7%)
+
+- Gray 500: hsl(0, 0%, 42%)
+- Gray 950: hsl(0, 0%, 7%)
 
 ## Typography
 
