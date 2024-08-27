@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-inter;
+}
+
+.app {
+  @apply flex flex-col items-center justify-center h-screen bg-gray900;
+}
