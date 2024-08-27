@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-outfit bg-lightyellow;
+}
+
+.recipe_page {
+  @apply bg-white mx-auto md:p-10 lg:rounded-3xl  lg:my-28 lg:w-[1000px];
+}
+
+.hero h1 {
+  @apply font-youngSerif text-5xl font-bold text-stone900;
+}
+
+.hero img {
+  @apply rounded-xl;
+}
