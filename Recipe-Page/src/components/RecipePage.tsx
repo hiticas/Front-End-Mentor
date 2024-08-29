@@ -27,7 +27,7 @@ interface RecipePageProps {
 }
 const RecipePage = ({ data }: RecipePageProps) => {
   return (
-    <div className="recipe_page">
+    <div className="recipe_page flex flex-col gap-80">
       <Hero {...data.hero} image={hero_img} />
       <PreparationTime {...data.preparationTime} />
       <Ingredients ingredients={data.ingredients} />

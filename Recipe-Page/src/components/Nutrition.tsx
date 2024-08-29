@@ -5,7 +5,7 @@ interface NutritionInfo {
 
 const Nutrition = ({ nutrition }: { nutrition: NutritionInfo[] }) => {
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-delay="500">
       <h1 className="text-3xl">Nutrition</h1>
       <p>
         The table below shows nutritional values per serving without the

@@ -10,7 +10,7 @@ const PreparationTime = ({
   cookingMinutes,
 }: PreparationTimeProps) => {
   return (
-    <div className="preparation_time">
+    <div className="preparation_time" data-aos="fade-up" data-aos-delay="500">
       <h1 className="text-3xl">Preparation time</h1>
       <ul>
         <li>Total: Approximately {totalMinutes} minutes</li>
