@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar_wrapper {
+  @apply relative flex justify-between items-center;
+}
+.navbar_items {
+  @apply absolute bg-gray-600 w-full md:static flex items-center gap-4;
+}
+.navbar_items ul {
+  @apply flex items-center gap-4;
+}
+
+.navbar_links {
+  @apply flex;
+}
+
+.login_button {
+  @apply bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600;
+}
+
+.icon_hamburger {
+  @apply md:hidden;
+}
